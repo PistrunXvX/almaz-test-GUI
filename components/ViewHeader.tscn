@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc38tesbnq2yr"]
+
+[ext_resource type="Script" uid="uid://cyik3xk20ohxe" path="res://scripts/ViewContainer/view_header.gd" id="1_kv7ot"]
+[ext_resource type="LabelSettings" uid="uid://dtpws8ursi8t4" path="res://assets/label_settings/view_header_label.tres" id="2_6d75n"]
+[ext_resource type="StyleBox" uid="uid://b104muvpa8cpf" path="res://assets/styles/style_box_flat_view_component_label.tres" id="2_nux86"]
+
+[node name="ViewHeader" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_kv7ot")
+
+[node name="PlaneTypeHeader" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_nux86")
+text = "Тип самолёта"
+label_settings = ExtResource("2_6d75n")
+vertical_alignment = 1
+
+[node name="PassagerCapacityHeader" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_nux86")
+text = "Пассажировместимость"
+label_settings = ExtResource("2_6d75n")
+vertical_alignment = 1
+
+[node name="SpeedHeader" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_nux86")
+text = "Крейсерская скорость (км/ч)"
+label_settings = ExtResource("2_6d75n")
+vertical_alignment = 1

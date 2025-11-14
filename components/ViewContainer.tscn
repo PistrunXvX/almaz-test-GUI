@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl672top1jtb"]
+
+[ext_resource type="Script" uid="uid://xyiob5olwp8d" path="res://scripts/ViewContainer/view_container.gd" id="1_ncdmp"]
+[ext_resource type="PackedScene" uid="uid://dc38tesbnq2yr" path="res://components/ViewHeader.tscn" id="2_yicqt"]
+
+[node name="ViewContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncdmp")
+
+[node name="ViewHeader" parent="." instance=ExtResource("2_yicqt")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+plane_type_header = "Тип самолёта"
+passager_capacity_header = "Пассажировместимость"
+speed_header = "Крейсерская скорость (км/ч)"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainScroll" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0

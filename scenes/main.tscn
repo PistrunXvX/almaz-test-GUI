@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu0mfe8wtgvjd"]
+
+[ext_resource type="PackedScene" uid="uid://b2sug8qfej4gi" path="res://components/FileDialog.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://c21kd2brhf014" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bl672top1jtb" path="res://components/ViewContainer.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dc38tesbnq2yr" path="res://components/ViewHeader.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://jfwj4jio6cg2" path="res://components/ViewComponent.tscn" id="4_jyhfs"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sugp2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="FileDialog" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ViewHeader" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_tbgi4")]
+layout_mode = 2
+plane_type_header = "Тип самолёта"
+passager_capacity_header = "Пассажировместимость"
+speed_header = "Крейсерская скорость (км/ч)"
+
+[node name="ViewContainer" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_0wfyh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+view_component_scene = ExtResource("4_jyhfs")

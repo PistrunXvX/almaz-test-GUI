@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2sug8qfej4gi"]
+
+[ext_resource type="Script" uid="uid://blw7nem53wgix" path="res://scripts/file_dialog.gd" id="1_3lclk"]
+
+[node name="FileDialog" type="Button"]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = -1
+anchor_left = 0.4565972
+anchor_top = 0.34567901
+anchor_right = 0.5434028
+anchor_bottom = 0.43981487
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "загрузить csv файл"
+script = ExtResource("1_3lclk")
+metadata/_edit_use_anchors_ = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(0, 36)
+file_mode = 0
+access = 2
+use_native_dialog = true

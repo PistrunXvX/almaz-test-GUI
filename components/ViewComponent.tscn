@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://jfwj4jio6cg2"]
+
+[ext_resource type="LabelSettings" uid="uid://drs4m1e0ys4xh" path="res://assets/label_settings/view_component_label.tres" id="1_b5dmm"]
+[ext_resource type="Script" uid="uid://vup5p2fn1yv6" path="res://scripts/ViewContainer/view_component.gd" id="1_l7ffg"]
+[ext_resource type="StyleBox" uid="uid://b104muvpa8cpf" path="res://assets/styles/style_box_flat_view_component_label.tres" id="1_ortsu"]
+
+[node name="ViewComponent" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_l7ffg")
+
+[node name="PlaneType" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_ortsu")
+text = "Airbus A320"
+label_settings = ExtResource("1_b5dmm")
+vertical_alignment = 1
+
+[node name="PassagerCapacity" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_ortsu")
+text = "150"
+label_settings = ExtResource("1_b5dmm")
+horizontal_alignment = 2
+
+[node name="Speed" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("1_ortsu")
+text = "853"
+label_settings = ExtResource("1_b5dmm")
+horizontal_alignment = 2
+vertical_alignment = 1

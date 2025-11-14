@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://drs4m1e0ys4xh"]
+
+[ext_resource type="FontFile" uid="uid://buxjk17cjm40v" path="res://assets/fonts/Roboto-Regular.ttf" id="1_pkryt"]
+
+[resource]
+font = ExtResource("1_pkryt")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
