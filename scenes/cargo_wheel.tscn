@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdk2vbgt3ksh8"]
+
+[ext_resource type="PackedScene" uid="uid://dgrix67mayxlf" path="res://components/cargo/Plane.tscn" id="1_dindc"]
+[ext_resource type="PackedScene" uid="uid://bhl1ueqkn1lsv" path="res://components/cargo/Cargo.tscn" id="2_q0ijd"]
+[ext_resource type="Script" uid="uid://cgf6iu0qf6qy1" path="res://scripts/Cargo/main_camera.gd" id="3_k5243"]
+[ext_resource type="PackedScene" uid="uid://d003rye02bkjs" path="res://components/cargo/PopupUi.tscn" id="4_1vo5g"]
+
+[sub_resource type="Environment" id="Environment_q0ijd"]
+background_mode = 1
+background_color = Color(0.48168606, 0.6498215, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.6378432, 0.6378432, 0.63784313, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_k5243"]
+closed = true
+bake_interval = 1.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.12439287, 0, 13.06012, 0, 0, 0, 0, 0, 0, -11.188007, 0, 23.982704, 0, 0, 0, 0, 0, 0, 12.147922, 0, 32.51586, 0, 0, 0, 0, 0, 0, -11.2067995, 0, 40.331894, 0, 0, 0, 0, 0, 0, 11.33484, 0, 53.093674, 0, 0, 0, 0, 0, 0, -11.943296, 0, 64.99077, 0, 0, 0, 0, 0, 0, 12.099118, 0, 77.46382, 0, 0, 0, 0, 0, 0, -11.041569, 0, 89.25505),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[node name="CargoField" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 87.09894)
+
+[node name="Plane" parent="." instance=ExtResource("1_dindc")]
+transform = Transform3D(-0.99998945, 0, 0.0045901695, 0, 1, 0, -0.0045901695, 0, -0.99998945, 0.08429884, 0, 50.052444)
+
+[node name="Cargo" parent="." node_paths=PackedStringArray("path_follow") instance=ExtResource("2_q0ijd")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.10431965, 1.3531194, 4.361431)
+path_follow = NodePath("../Path3D/PathFollow3D")
+path_speed = 1.0
+engine_power = 30.0
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.99998945, 0.0032458021, -0.0032458021, 0, 0.7071068, 0.7071068, 0.004590257, -0.7070994, 0.7070994, -0.14857689, 6.59541, 14.776192)
+script = ExtResource("3_k5243")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.99998945, -0.0045692213, -0.0004380342, 0, -0.09542876, 0.99543625, -0.004590169, 0.99542576, 0.09542775, 0.08429884, 30.672554, -36.72997)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q0ijd")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_k5243")
+debug_custom_color = Color(0.74509805, 0, 0, 1)
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.7025566, 0, 0.7116279, 0, 1, 0, -0.7116279, 0, -0.7025566, -0.12439287, 0, 13.06012)
+
+[node name="PopupUi" parent="." instance=ExtResource("4_1vo5g")]

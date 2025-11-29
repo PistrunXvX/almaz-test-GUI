@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhl1ueqkn1lsv"]
+
+[ext_resource type="Script" uid="uid://bh0fy3udsmlla" path="res://scripts/Cargo/cargo.gd" id="1_a5akm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7b06f"]
+size = Vector3(1, 1, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7b06f"]
+points = PackedVector3Array(0.5, 0.5, 1.5, 0.5, -0.5, 1.5, 0.5, 0.5, -1.5, -0.5, 0.5, 1.5, -0.5, -0.5, 1.5, 0.5, -0.5, -1.5, -0.5, 0.5, -1.5, -0.5, -0.5, -1.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7b06f"]
+
+[node name="Cargo" type="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5042038, 0)
+mass = 250.0
+script = ExtResource("1_a5akm")
+
+[node name="BodyCargo" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54044485, 0)
+mesh = SubResource("BoxMesh_7b06f")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54044485, 0)
+shape = SubResource("ConvexPolygonShape3D_7b06f")
+metadata/_edit_group_ = true
+
+[node name="WheelRightBackCargo" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79073346, 0, -1.0913662)
+use_as_traction = true
+suspension_travel = 0.55
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelRightBackCargo"]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, 0.08598578, 0, 0)
+mesh = SubResource("CylinderMesh_7b06f")
+
+[node name="WheelLeftBackCargo" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61913073, 0, -1.0913662)
+use_as_traction = true
+suspension_travel = 0.55
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelLeftBackCargo"]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, 0.08598578, 0, 0)
+mesh = SubResource("CylinderMesh_7b06f")
+
+[node name="WheelLeftForwardCargo" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61913073, 0, 1.1281582)
+use_as_traction = true
+use_as_steering = true
+suspension_travel = 0.55
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelLeftForwardCargo"]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, 0.08598578, 0, 0)
+mesh = SubResource("CylinderMesh_7b06f")
+
+[node name="WheelRightForwardCargo" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79773283, 0, 1.1281582)
+use_as_traction = true
+use_as_steering = true
+suspension_travel = 0.55
+suspension_stiffness = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WheelRightForwardCargo"]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, 0.08598578, 0, 0)
+mesh = SubResource("CylinderMesh_7b06f")
