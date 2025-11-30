@@ -29,7 +29,6 @@ func _on_period_input_value_changed(value: float) -> void:
 
 func _on_btn_start_pressed() -> void:
 	if is_correct_input_data():
-		self.visible = false
 		start_simulation.emit(_speed, _amplitude, _period)
 
 func is_correct_input_data() -> bool:
