@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgrix67mayxlf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wyo8d"]
-size = Vector3(40, 1, 100)
+size = Vector3(40, 1, 130)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_upaex"]
-points = PackedVector3Array(20, 0.5, 50, 20, -0.5, 50, 20, 0.5, -50, -20, 0.5, 50, -20, -0.5, 50, 20, -0.5, -50, -20, 0.5, -50, -20, -0.5, -50)
+points = PackedVector3Array(20, 0.5, 65, 20, -0.5, 65, 20, 0.5, -65, -20, 0.5, 65, -20, -0.5, 65, 20, -0.5, -65, -20, 0.5, -65, -20, -0.5, -65)
 
 [node name="Plane" type="StaticBody3D"]
 

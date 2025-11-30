@@ -4,9 +4,9 @@ extends VehicleBody3D
 @export var path_speed: float = 10.0
 @export var engine_power: float = 80.0
 
-var _max_steer: float = 0.5
-var _steer_sensitivity: float = 2.0
-var _steer_lerp: float = 5.0
+var _max_steer: float = 0.5 #максимальный угол поворота передних колёс
+var _steer_sensitivity: float = 10.0 #чувствительность руля
+var _steer_lerp: float = 5.0 #плавность поворота руля
 
 func _physics_process(delta: float) -> void:
 	if path_follow == null:

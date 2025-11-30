@@ -70,6 +70,7 @@ label_settings = ExtResource("1_q822v")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+value = 20.0
 rounded = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
@@ -85,6 +86,7 @@ label_settings = ExtResource("1_q822v")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+value = 15.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -98,6 +100,7 @@ label_settings = ExtResource("1_q822v")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+value = 40.0
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2

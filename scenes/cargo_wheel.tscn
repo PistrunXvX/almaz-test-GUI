@@ -27,7 +27,7 @@ transform = Transform3D(-0.99998945, 0, 0.0045901695, 0, 1, 0, -0.0045901695, 0,
 [node name="Cargo" parent="." node_paths=PackedStringArray("path_follow") instance=ExtResource("2_q0ijd")]
 unique_name_in_owner = true
 process_mode = 1
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.10431965, 1.3531194, 4.361431)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.10431965, 1.3531194, -11.298859)
 path_follow = NodePath("../Path3D/PathFollow3D")
 path_speed = 1.0
 engine_power = 30.0
@@ -44,11 +44,11 @@ environment = SubResource("Environment_q0ijd")
 
 [node name="Path3D" type="Path3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5331144, 7.2037277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5331144, -7.4995575)
 curve = SubResource("Curve3D_k5243")
 debug_custom_color = Color(0.74509805, 0, 0, 1)
 script = ExtResource("4_wl61e")
-points_count = 100
+points_count = 50
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 transform = Transform3D(-0.4540046, 0, 0.89099926, 0, 1, 0, -0.89099926, 0, -0.4540046, 12.099118, 0, 77.46382)

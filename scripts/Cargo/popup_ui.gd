@@ -8,9 +8,9 @@ extends Control
 
 signal start_simulation(speed: float, amplitude: float, period: float)
 
-var _speed: float = 0
-var _amplitude: float = 0
-var _period: float = 0
+var _speed: float = 20
+var _amplitude: float = 15
+var _period: float = 40
 
 func _ready() -> void:
 	speed_input.value_changed.connect(_on_speed_input_value_changed)
